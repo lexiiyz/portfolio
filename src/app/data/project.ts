@@ -1,4 +1,3 @@
-// data/project.ts
 export type Project = {
   id: number;
   title: string;
@@ -13,15 +12,15 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "BookITS",
-    description: "E-Commerce buku full-stack dengan MERN (MongoDB, Express, React, Node.js).",
+    description: "Full-stack e-commerce book platform built with MERN stack (MongoDB, Express, React, Node.js).",
     tech: ["react", "nodejs", "mongodb", "expressjs", "postman"],
     imageUrl: "/bookits.png",
-    githubUrl: "https://github.com/lexiiyz/fplayap", 
+    githubUrl: "https://github.com/lexiiyz/fplayap",
   },
   {
     id: 2,
     title: "ClassSpace",
-    description: "Platform classroom untuk dosen (UI/UX + Frontend).",
+    description: "Classroom platform for lecturers (UI/UX + Frontend).",
     tech: ["figma", "react", "tailwindcss"],
     imageUrl: "/classpace.png",
     githubUrl:"https://github.com/Eeja07/course-webapp-project",
@@ -29,15 +28,15 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Cravory",
-    description: "Website resep makanan dengan MERN stack.",
+    description: "Food recipe website built with MERN stack.",
     tech: ["react", "nodejs", "mongodb", "expressjs", "tailwindcss"],
-    imageUrl: "/images/projects/cravory.png",
+    imageUrl: "/cravory.png",
     githubUrl: "https://github.com/lexiiyz/cravory",
   },
   {
     id: 4,
     title: "My Portfolio",
-    description: "Portfolio pribadi dengan Next.js dan TypeScript.",
+    description: "Personal portfolio built with Next.js and TypeScript.",
     tech: ["nextjs", "typescript", "tailwindcss"],
     imageUrl: "/myportofolio.png",
     githubUrl: "https://github.com/lexiiyz/portfolio",

@@ -113,17 +113,6 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
           {project.description}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          {project.demoUrl && project.demoUrl !== '#' && (
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-md transition duration-300"
-              onClick={(e) => e.stopPropagation()}
-            >
-              Demo
-            </a>
-          )}
           {project.githubUrl && project.githubUrl !== '#' && (
             <a
               href={project.githubUrl}

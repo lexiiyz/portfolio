@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import Navbar from '@/app/components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'Portofolio [Nama Kamu]',
-  description: 'Portofolio Web Developer',
+  title: 'Portofolio Rakha',
+  description: 'Portofolio Website',
 };
 
 export default function RootLayout({
