@@ -77,7 +77,6 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Social Icons (these are external links, so they don't need smooth scroll behavior) */}
         <div className="flex space-x-4">
           <Link href="https://www.linkedin.com/in/raditya-rakha" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9H0v12h4zM2 6a2 2 0 110-4 2 2 0 010 4z" /></svg>

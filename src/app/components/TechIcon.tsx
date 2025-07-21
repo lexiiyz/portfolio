@@ -2,7 +2,7 @@ import { techLogos } from "../data/techLogos";
 
 type TechIconProps = {
   tech: string;
-  size?: number; // Ukuran dalam pixel
+  size?: number; 
 };
 
 export default function TechIcon({ tech, size = 24 }: TechIconProps) {

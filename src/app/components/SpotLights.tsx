@@ -67,7 +67,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={handleCardClick} // Tambahkan onClick di sini untuk seluruh kartu
+      onClick={handleCardClick} 
       className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden p-8 ${className}`}
     >
       <div
@@ -77,7 +77,6 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
           background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
         }}
       />
-      {/* Konten Kartu Proyek */}
       <div className="relative z-10 flex flex-col h-full">
         {project.imageUrl && ( 
           <div className="mb-4">
@@ -138,7 +137,6 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
           )}
         </div>
       </div>
-      {/* children sudah tidak diperlukan karena konten langsung di render di sini */}
     </div>
   );
 };

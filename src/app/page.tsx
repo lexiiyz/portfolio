@@ -1,10 +1,8 @@
-// page.tsx
 'use client';
 
 import { projects } from './data/project';
 import SpotlightCard from './components/SpotLights';
 import Skill from './components/Skill';
-import ContactForm from './components/ContactForm';
 import TextType from './components/TextType';
 import DotGrid from './components/DotGrid';
 import Link from 'next/link';
@@ -51,7 +49,6 @@ export default function Home() {
             passionate about creating seamless and user-friendly web experiences. With experience in both web development and UI/UX design, I aim to build digital products that are not only functional but also beautiful and intuitive.
           </p>
 
-          {/* Download CV Button */}
           <div className="mt-10">
             <Link
               href="https://drive.google.com/file/d/1FZUpnsF-3Iwz2OYzGKmtFICX8zGijh5G/view?usp=sharingg" 
@@ -83,7 +80,7 @@ export default function Home() {
             {projects.map((project) => (
               <SpotlightCard
                 key={project.id}
-                project={project} // <-- Teruskan objek project ke SpotlightCard
+                project={project} 
                 spotlightColor="rgba(132, 0, 255, 0.25)"
                 className="cursor-pointer"
               />

@@ -1,6 +1,6 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
-import { techLogos } from "../data/techLogos"; // Pastikan path ini benar
+import { techLogos } from "../data/techLogos"; 
 
 export default function Skill() {
 ;
@@ -10,7 +10,7 @@ export default function Skill() {
           Tech <span className="text-blue-300">Stack</span>
         </h1>
         <h3 className="text-lg md:text-xl mb-10 text-gray-200">
-          Tools to make a brilliant website
+          Tools that i use to make a beautiful and intuitive website
         </h3>
 
         <Marquee

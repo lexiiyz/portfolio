@@ -4,7 +4,7 @@ export type Project = {
   title: string;
   description: string;
   tech: string[];
-  imageUrl?: string; // <-- Tambahkan properti ini
+  imageUrl?: string; //
   demoUrl?: string;
   githubUrl?: string;
 };
@@ -16,7 +16,7 @@ export const projects: Project[] = [
     description: "E-Commerce buku full-stack dengan MERN (MongoDB, Express, React, Node.js).",
     tech: ["react", "nodejs", "mongodb", "expressjs", "postman"],
     imageUrl: "/bookits.png",
-    githubUrl: "https://github.com/your-username/bookits", // <-- Ganti dengan URL GitHub sebenarnya
+    githubUrl: "https://github.com/lexiiyz/fplayap", 
   },
   {
     id: 2,

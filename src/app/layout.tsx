@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-50">
         <Navbar />
-        <main className="pt-16"> {/* Padding untuk offset navbar fixed */}
+        <main className="pt-16"> 
           {children}
         </main>
       </body>
