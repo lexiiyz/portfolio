@@ -4,7 +4,7 @@ import { projects } from './data/project';
 import SpotlightCard from './components/SpotLights';
 import Skill from './components/Skill';
 import TextType from './components/TextType';
-import DotGrid from './components/DotGrid';
+import Beams from './components/Beams';
 import Link from 'next/link';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -17,17 +17,16 @@ export default function Home() {
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
       <div className="absolute inset-0 z-0 w-full h-full">
-        <DotGrid
-          dotSize={5}
-          gap={15}
-          baseColor="rgb(39, 30, 55)"
-          activeColor="#5227FF"
-          proximity={120}
-          shockRadius={250}
-          shockStrength={5}
-          resistance={750}
-          returnDuration={1.5}
-        />
+        <Beams
+    beamWidth={2}
+    beamHeight={15}
+    beamNumber={12}
+    lightColor="rgba(132, 0, 255, 0.25)"
+    speed={4}
+    noiseIntensity={1.75}
+    scale={0.2}
+    rotation={30}
+  />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 pb-12">
