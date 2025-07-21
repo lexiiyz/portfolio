@@ -31,11 +31,11 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 pb-12">
-        <section className="min-h-[60vh] flex flex-col justify-center items-center text-center relative z-20
+        <section className="h-120 min-h-[60vh] flex flex-col justify-center items-center text-center relative z-20
           bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl
           border border-white/20 hover:border-white/40 transition-all duration-300 mx-auto max-w-4xl mt-10">
           <h1 className="font-heading text-4xl font-extrabold text-purple-300">
-            Hello, I'm <span className="text-blue-300">Raditya Rakha</span>
+            {"Hello, I'm"} <span className="text-blue-300">Raditya Rakha</span>
           </h1>
           <TextType 
             text={["Web Developer", "Full Stack Developer", "UI/UX Designer"]}
