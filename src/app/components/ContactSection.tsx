@@ -85,7 +85,7 @@ export default function ContactSection() {
         <div className="md:text-left text-center">
           <h3 className="text-2xl font-semibold text-blue-300 mb-5">Connect with Me</h3>
           <p className="font-body text-lg text-gray-200 mb-6">
-            I'm always open to new connections and collaborations. Find me on:
+            {"I'm always open to new connections and collaborations. Find me on:"}
           </p>
 
           <div className="space-y-4">
