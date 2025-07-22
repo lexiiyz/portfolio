@@ -1,10 +1,13 @@
 import './globals.css';
-import type { Metadata } from 'next';
-import Navbar from '@/app/components/Navbar';
+import { Inter } from 'next/font/google';
+import Navbar from './components/Navbar';
+import AOSInitializer from './components/AOSInitializer';
 
-export const metadata: Metadata = {
-  title: 'Portofolio Rakha',
-  description: 'Portofolio Website',
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata = {
+  title: 'Raditya Rakha Portfolio',
+  description: 'Personal portfolio of Raditya Rakha, a Fullstack Web Developer and UI/UX Designer.',
 };
 
 export default function RootLayout({
@@ -14,11 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50">
+      <body className={inter.className}>
         <Navbar />
-        <main className="pt-16"> 
-          {children}
-        </main>
+        {children}
+        <AOSInitializer /> 
       </body>
     </html>
   );

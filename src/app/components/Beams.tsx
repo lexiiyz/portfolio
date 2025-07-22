@@ -1,3 +1,5 @@
+'use client'; 
+
 import {
   forwardRef,
   useImperativeHandle,
@@ -6,6 +8,7 @@ import {
   useMemo,
   FC,
   ReactNode,
+  useState,
 } from "react";
 
 import * as THREE from "three";
@@ -106,7 +109,7 @@ const hexToNormalizedRGB = (hex: string): [number, number, number] => {
 const noise = `
 float random (in vec2 st) {
     return fract(sin(dot(st.xy,
-                         vec2(12.9898,78.233)))*
+                          vec2(12.9898,78.233)))*
         43758.5453123);
 }
 float noise (in vec2 st) {
@@ -192,18 +195,39 @@ interface BeamsProps {
 }
 
 const Beams: FC<BeamsProps> = ({
-  beamWidth = 2,
-  beamHeight = 15,
-  beamNumber = 12,
+  beamWidth: initialBeamWidth = 2,
+  beamHeight: initialBeamHeight = 15,
+  beamNumber: initialBeamNumber = 12,
   lightColor = "#ffffff",
-  speed = 2,
+  speed: initialSpeed = 2,
   noiseIntensity = 1.75,
-  scale = 0.2,
-  rotation = 0,
+  scale: initialScale = 0.2,
+  rotation: initialRotation = 0,
 }) => {
   const meshRef = useRef<
     THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>
   >(null!);
+
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    setWindowWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); 
+
+
+  const currentBeamNumber = windowWidth < 768 ? 6 : initialBeamNumber; 
+  const currentBeamWidth = windowWidth < 768 ? initialBeamWidth * 0.25 : initialBeamWidth;
+  const currentBeamHeight = windowWidth < 768 ? initialBeamHeight * 0.75 : initialBeamHeight;
+  const currentSpeed = windowWidth < 768 ? initialSpeed * 0.8 : initialSpeed; 
+  const currentScale = windowWidth < 768 ? initialScale * 1.5 : initialScale; 
+  const currentRotation = windowWidth < 768 ? initialRotation : initialRotation; 
 
   const beamMaterial = useMemo(
     () =>
@@ -253,24 +277,24 @@ const Beams: FC<BeamsProps> = ({
           time: { shared: true, mixed: true, linked: true, value: 0 },
           roughness: 0.3,
           metalness: 0.3,
-          uSpeed: { shared: true, mixed: true, linked: true, value: speed },
+          uSpeed: { shared: true, mixed: true, linked: true, value: currentSpeed }, 
           envMapIntensity: 10,
           uNoiseIntensity: noiseIntensity,
-          uScale: scale,
+          uScale: currentScale, 
         },
       }),
-    [speed, noiseIntensity, scale]
+    [currentSpeed, noiseIntensity, currentScale] 
   );
 
   return (
     <CanvasWrapper>
-      <group rotation={[0, 0, degToRad(rotation)]}>
+      <group rotation={[0, 0, degToRad(currentRotation)]}> 
         <PlaneNoise
           ref={meshRef}
           material={beamMaterial}
-          count={beamNumber}
-          width={beamWidth}
-          height={beamHeight}
+          count={currentBeamNumber} 
+          width={currentBeamWidth} 
+          height={currentBeamHeight} 
         />
         <DirLight color={lightColor} position={[0, 3, 10]} />
       </group>
