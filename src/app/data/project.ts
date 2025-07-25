@@ -15,7 +15,7 @@ export const projects: Project[] = [
     description: "Full-stack e-commerce book platform built with MERN stack (MongoDB, Express, React, Node.js).",
     tech: ["react", "nodejs", "mongodb", "expressjs", "postman"],
     imageUrl: "/bookits.png",
-    githubUrl: "https://github.com/lexiiyz/fplayap",
+    githubUrl: "https://github.com/lexiiyz/bookITS",
   },
   {
     id: 2,
