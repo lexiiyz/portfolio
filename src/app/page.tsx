@@ -55,7 +55,7 @@ export default function Home() {
 
           <div className="mt-10">
             <Link
-              href="https://drive.google.com/file/d/1FZUpnsF-3Iwz2OYzGKmtFICX8zGijh5G/view?usp=sharingg"
+              href="https://drive.google.com/file/d/1rDCHgENll8lVSy8Y2OTxtNCiCMfum3Pb/view?usp=sharing"
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -75,7 +75,7 @@ export default function Home() {
         <section
           id="skills"
           className="justify-center mt-20 relative z-10 bg-gradient-to-br from-indigo-900/30 to-blue-900/30 p-8 rounded-lg shadow-lg backdrop-blur-sm border border-indigo-700/50 mx-auto max-w-9xl"
-          data-aos="fade-up" // Animasi untuk Skills section
+          data-aos="fade-up"
           data-aos-duration="1000"
         >
           <Skill />
@@ -84,9 +84,9 @@ export default function Home() {
         <section
           id="projects"
           className="mt-20 relative z-10 mx-auto max-w-5xl"
-          data-aos="fade-up" // Animasi untuk Projects section
+          data-aos="fade-up" 
           data-aos-duration="1000"
-          data-aos-delay="200" // Sedikit delay
+          data-aos-delay="200" 
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center drop-shadow-lg">My <span className="text-blue-400">Project</span></h2>
 
@@ -97,7 +97,7 @@ export default function Home() {
                 project={project}
                 spotlightColor="rgba(132, 0, 255, 0.25)"
                 className="cursor-pointer"
-                data-aos="zoom-in" // Animasi untuk setiap Project Card
+                data-aos="zoom-in" 
                 data-aos-duration="800"
               />
             ))}
@@ -105,7 +105,7 @@ export default function Home() {
         </section>
         <section
           id='contact'
-          data-aos="fade-up" // Animasi untuk Contact section
+          data-aos="fade-up" 
           data-aos-duration="1000"
         >
           <ContactSection />
