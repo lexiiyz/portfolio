@@ -16,7 +16,7 @@ export default function Home() {
   const [showHome, setShowHome] = useState(false);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen">
       {!showHome && <Preloader onFinish={() => setShowHome(true)} />} 
 
       <AnimatePresence>
