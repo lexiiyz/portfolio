@@ -66,7 +66,7 @@ export default function Preloader({ onFinish }: Props) {
     >
       <div className="absolute inset-0 z-0 w-full h-full">
         <Beams
-          beamWidth={4}
+          beamWidth={12}
           beamHeight={15}
           beamNumber={16}
           lightColor="rgba(132, 0, 255, 0.25)"
@@ -91,7 +91,7 @@ export default function Preloader({ onFinish }: Props) {
                 from={0}
                 to={100}
                 duration={3}
-                className="text-blue-300 text-3xl font-bold sm:text-4xl"
+                className="text-purple-300 text-3xl font-bold sm:text-4xl"
                 onEnd={handleCountUpEnd}
               />
             </motion.div>
@@ -105,7 +105,7 @@ export default function Preloader({ onFinish }: Props) {
             >
               <SplitText
                 text={texts[textIdx]}
-                className="text-2xl font-semibold text-center text-blue-300 sm:text-4xl"
+                className="text-2xl font-semibold text-center text-purple-300 sm:text-4xl"
                 delay={100}
                 duration={0.7}
                 ease="power3.out"
