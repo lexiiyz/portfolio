@@ -112,13 +112,14 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
         <p className="text-sm md:text-base text-gray-300 flex-grow">
           {project.description}
         </p>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="flex justify-between flex-wrap">
+          <div className="mt-4 flex flex-wrap gap-2">
           {project.githubUrl && project.githubUrl !== '#' && (
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white text-sm rounded-md transition duration-300"
+              className="px-15 py-3 bg-[#8400ff] hover:bg-purple-300 text-white hover:text-black text-sm rounded-md transition duration-300"
               onClick={(e) => e.stopPropagation()}
             >
               GitHub
@@ -131,12 +132,13 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white text-sm rounded-md transition duration-300"
+              className="px-15 py-3 bg-purple-300 hover:bg-[#8400ff] text-black hover:text-white text-sm rounded-md transition duration-300"
               onClick={(e) => e.stopPropagation()}
             >
               Demo
             </a>
           )}
+        </div>
         </div>
       </div>
     </div>
