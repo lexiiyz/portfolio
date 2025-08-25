@@ -8,6 +8,7 @@ import Beams from './components/Beams';
 import Link from 'next/link';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import Preloader from './components/Preloader';
 
 const handleAnimationComplete = () => {
   console.log('All letters have animated!');
@@ -16,6 +17,7 @@ const handleAnimationComplete = () => {
 export default function Home() {
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
+      <Preloader />
       <div className="absolute inset-0 z-0 w-full h-full">
         <Beams
           beamWidth={2}

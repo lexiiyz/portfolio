@@ -41,4 +41,13 @@ export const projects: Project[] = [
     imageUrl: "/myportofolio.png",
     githubUrl: "https://github.com/lexiiyz/portfolio",
   },
+  {
+    id: 5,
+    title: "Literae",
+    description: "FrontEnd Bookstore Website Using Google BooksAPI, built with React.js, Typescript, and TailwindCSS",
+    tech: ["reactjs", "typescript", "tailwindcss", "postman"],
+    imageUrl : "/literae.png",
+    githubUrl : "https://github.com/lexiiyz/minilemon-test",
+    demoUrl : "https://minilemon-test-liard.vercel.app/"
+  }
 ];

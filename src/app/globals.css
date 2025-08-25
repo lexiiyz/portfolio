@@ -13,3 +13,7 @@ body {
   scroll-margin-top: 7rem;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 8px;
+}
