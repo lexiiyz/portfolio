@@ -11,9 +11,15 @@ import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { Project } from './data/project';
 
 export default function Home() {
   const [showHome, setShowHome] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<'All' | 'Web' | 'Mobile' | 'IoT' | 'DevOps' | 'AI'>('All');
+
+  const filteredProjects = activeCategory === 'All' 
+    ? projects 
+    : projects.filter(project => project.category === activeCategory);
 
   return (
     <div className="relative w-full min-h-screen">
@@ -27,12 +33,14 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="absolute inset-0 z-0 w-full h-full pointer-events-none scanlines" />
+            
             <div className="absolute inset-0 z-0 w-full h-full">
               <Beams
                 beamWidth={2}
                 beamHeight={15}
                 beamNumber={12}
-                lightColor="rgba(132, 0, 255, 0.25)"
+                lightColor="#00f0ff"
                 speed={4}
                 noiseIntensity={1.75}
                 scale={0.2}
@@ -44,22 +52,22 @@ export default function Home() {
               <section
                 id="home"
                 className="h-120 min-h-[60vh] flex flex-col justify-center items-center text-center relative z-20
-                           bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl
-                           border border-white/20 hover:border-white/40 transition-all duration-300 mx-auto max-w-4xl mt-30"
+                           bg-[var(--card-bg)] p-8 shadow-xl
+                           border border-[var(--primary-neon)] cyberpunk-card mx-auto max-w-4xl mt-30"
               >
-                <h1 className="font-heading text-4xl font-extrabold text-purple-300">
-                  {"Hello, I'm"} <span className="text-blue-300">Raditya Rakha</span>
+                <h1 className="font-heading text-4xl font-extrabold text-[var(--text-primary)] glitch-text">
+                  {"Hello, I'm"} <span className="text-[var(--primary-neon)]">Raditya Rakha</span>
                 </h1>
                 <TextType
-                  text={["Web Developer", "Full Stack Developer", "UI/UX Designer"]}
-                  className="text-3xl"
+                  text={["Frontend Developer", "DevOps Enthusiast", "Full Stack Developer", "UI/UX Designer"]}
+                  className="text-3xl text-[var(--secondary-neon)] mt-4"
                   typingSpeed={75}
                   pauseDuration={1500}
                   showCursor={true}
                   cursorCharacter="|"
                 />
-                <p className="font-body text-md md:text-1xl text-gray-200 mt-6 leading-relaxed max-w-2xl drop-shadow-md">
-                  passionate about creating seamless and user-friendly web experiences...
+                <p className="font-body text-md md:text-1xl text-gray-300 mt-6 leading-relaxed max-w-2xl drop-shadow-md">
+                  Architecting scalable web solutions and managing complex infrastructure. Passionate about self-hosting, cloud orchestration, and building seamless digital experiences.
                 </p>
 
                 <div className="mt-10">
@@ -67,28 +75,63 @@ export default function Home() {
                     href="https://drive.google.com/file/d/14AVSlItQ8BxfbN1JgLZ35znyFGtqnv83/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-8 py-4 border border-transparent text-base font-semibold rounded-full shadow-lg
-                               text-white bg-gradient-to-r from-purple-600 to-blue-600
-                               hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
-                               transform hover:scale-105 transition-all duration-300"
+                    className="inline-flex items-center px-8 py-4 border border-[var(--primary-neon)] text-base font-semibold
+                               text-[var(--background)] bg-[var(--primary-neon)]
+                               hover:bg-[var(--background)] hover:text-[var(--primary-neon)] hover:border-[var(--secondary-neon)]
+                               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-neon)]
+                               transform transition-all duration-300 relative overflow-hidden group clip-path-polygon glitch-button"
+                    style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)' }}
                   >
-                    Download My CV
+                    <span className="relative z-10">Download My CV</span>
                   </Link>
                 </div>
               </section>
 
-              <section id="skills" className="justify-center mt-20 relative z-10 bg-gradient-to-br from-indigo-900/30 to-blue-900/30 p-8 rounded-lg shadow-lg backdrop-blur-sm border border-indigo-700/50 mx-auto max-w-9xl">
+              <section id="skills" className="justify-center mt-20 relative z-10 p-8 mx-auto max-w-9xl cyberpunk-card">
                 <Skill />
               </section>
 
               <section id="projects" className="mt-20 relative z-10 mx-auto max-w-5xl">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center drop-shadow-lg">
-                  My <span className="text-blue-400">Project</span>
+                  My <span className="text-[var(--primary-neon)]">Project</span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                  {projects.map((project) => (
-                    <SpotlightCard key={project.id} project={project} spotlightColor="rgba(132, 0, 255, 0.25)" />
+
+                {/* Cyberpunk Tabs */}
+                <div className="flex flex-wrap justify-center gap-4 mb-10">
+                  {(['All', 'Web', 'Mobile', 'IoT', 'DevOps', 'AI'] as const).map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setActiveCategory(category)}
+                      className={`
+                        px-6 py-2 border font-bold uppercase tracking-wider transition-all duration-300
+                        ${activeCategory === category 
+                          ? 'bg-[var(--primary-neon)] text-[var(--background)] border-[var(--primary-neon)] shadow-[0_0_15px_var(--primary-neon)]' 
+                          : 'bg-transparent text-[var(--text-primary)] border-[var(--primary-neon)]/30 hover:border-[var(--primary-neon)] hover:text-[var(--primary-neon)]'
+                        }
+                        relative overflow-hidden group clip-path-polygon
+                      `}
+                      style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)' }}
+                    >
+                      {category}
+                    </button>
                   ))}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                  <AnimatePresence mode='popLayout'>
+                    {filteredProjects.map((project) => (
+                      <motion.div
+                        key={project.id}
+                        layout
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <SpotlightCard project={project} spotlightColor="#bc13fe" />
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
                 </div>
               </section>
 

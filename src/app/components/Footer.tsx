@@ -40,7 +40,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black/20 backdrop-blur-md border-t border-white/10 text-white py-8 px-4 text-center relative z-10">
+    <footer className="bg-[#050505]/90 backdrop-blur-md border-t border-[var(--primary-neon)] text-[var(--text-primary)] py-8 px-4 text-center relative z-10">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <p className="font-body text-gray-400 text-sm">
           &copy; {currentYear} Raditya Rakha. All rights reserved.

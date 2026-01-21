@@ -12,14 +12,14 @@ interface Position {
 interface SpotlightCardProps extends React.PropsWithChildren {
   project: Project; 
   className?: string;
-  spotlightColor?: `rgba(${number}, ${number}, ${number}, ${number})`;
+  spotlightColor?: string;
 }
 
 const SpotlightCard: React.FC<SpotlightCardProps> = ({
   project,
   children, 
   className = "",
-  spotlightColor = "rgba(255, 255, 255, 0.25)"
+  spotlightColor = "rgba(188, 19, 254, 0.25)"
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -68,7 +68,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleCardClick} 
-      className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden p-8 ${className}`}
+      className={`relative cyberpunk-card p-8 ${className}`}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
@@ -83,8 +83,8 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
             <img
               src={project.imageUrl}
               alt={project.title}
-              className="w-full h-60 object-cover rounded-md" 
-            />
+              className="w-full h-60 object-contain bg-black/40 rounded-md border border-white/5" 
+            /> 
           </div>
         )}
         <div className="flex flex-wrap gap-2 mb-4">
@@ -106,7 +106,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
             return null;
           })}
         </div>
-        <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
+        <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] mb-2 leading-tight">
           {project.title}
         </h3>
         <p className="text-sm md:text-base text-gray-300 flex-grow">
@@ -119,8 +119,8 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-15 py-3 bg-[#8400ff] hover:bg-purple-300 text-white hover:text-black text-sm rounded-md transition duration-300"
-              onClick={(e) => e.stopPropagation()}
+              className="px-15 py-3 bg-[var(--secondary-neon)] hover:opacity-80 text-white hover:text-black text-sm transition duration-300 glitch-button relative overflow-hidden"
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               GitHub
             </a>
@@ -132,8 +132,8 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-15 py-3 bg-purple-300 hover:bg-[#8400ff] text-black hover:text-white text-sm rounded-md transition duration-300"
-              onClick={(e) => e.stopPropagation()}
+              className="px-15 py-3 bg-[var(--primary-neon)] hover:bg-[var(--secondary-neon)] text-black hover:text-white text-sm transition duration-300 glitch-button relative overflow-hidden"
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               Demo
             </a>

@@ -5,11 +5,11 @@ import Link from 'next/link';
 export default function ContactSection() {
   return (
     <section id="contact" className="mt-20 relative z-10
-      bg-gradient-to-br from-blue-900/30 to-indigo-900/30
-      p-8 rounded-lg shadow-xl backdrop-blur-sm border border-blue-700/50
-      mx-auto max-w-4xl mb-10 text-white">
-      <h2 className="font-extrabold text-3xl md:text-4xl mb-8 text-center text-blue-300 drop-shadow-lg">
-        Get in <span className="text-purple-300">Touch</span>
+      cyberpunk-card
+      p-8 shadow-xl
+      mx-auto max-w-4xl mb-10 text-[var(--text-primary)]">
+      <h2 className="font-extrabold text-3xl md:text-4xl mb-8 text-center text-[var(--primary-neon)] drop-shadow-lg glitch-text">
+        Get in <span className="text-[var(--secondary-neon)]">Touch</span>
       </h2>
 
       <p className="font-body text-lg md:text-xl text-center leading-relaxed max-w-2xl mx-auto mb-10 text-gray-200">
@@ -32,9 +32,9 @@ export default function ContactSection() {
                 type="text"
                 id="name"
                 name="name" 
-                className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight
-                           focus:outline-none focus:shadow-outline focus:border-blue-500
-                           bg-gray-800/50 border-gray-700 text-white placeholder-gray-400"
+                className="shadow appearance-none border border-[var(--primary-neon)]/30 rounded-none w-full py-3 px-4 text-[var(--text-primary)] leading-tight
+                           focus:outline-none focus:shadow-[0_0_10px_var(--primary-neon)] focus:border-[var(--primary-neon)]
+                           bg-black/50 placeholder-gray-500 transition-all duration-300"
                 placeholder="John Doe"
                 required
               />
@@ -71,10 +71,10 @@ export default function ContactSection() {
             </div>
             <button
               type="submit"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-semibold rounded-full shadow-lg
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-semibold shadow-lg
                          text-white bg-gradient-to-r from-purple-600 to-blue-600
                          hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
-                         transform hover:scale-105 transition-all duration-300 w-full justify-center md:w-auto"
+                         transform transition-all duration-300 w-full justify-center md:w-auto relative overflow-hidden glitch-button"
             >
               Send Message
               <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l4.453-1.488 4.453 1.488a1 1 0 001.169-1.409l-7-14z"></path></svg>
