@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'Raditya Rakha Portfolio',
   description: 'Personal portfolio of Raditya Rakha, a Fullstack Web Developer and UI/UX Designer.',
+  icons: {
+    icon: '/logo.jpeg',
+  },
 };
 
 export default function RootLayout({
