@@ -42,7 +42,7 @@ export const metadata = {
     apple: '/logo.jpeg',
   },
   verification: {
-    google: 'google23c1f41374d06fc8',
+    google: 'dGxkpry8fopj8iFb1te69BdYMf4vLZh41mqGKGY2wjk',
   },
 };
 
