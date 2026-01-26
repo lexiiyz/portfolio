@@ -43,7 +43,7 @@ Follow these steps to set up the project locally on your machine.
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/lexiiyz/portfolio.git
    cd portfolio
    ```
 
