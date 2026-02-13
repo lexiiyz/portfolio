@@ -9,7 +9,7 @@
 
 A cutting-edge, **Cyberpunk-themed** personal portfolio website designed to showcase my skills, projects, and professional journey as a Fullstack Developer and DevOps enthusiast. Built with performance and aesthetics in mind, this project leverages the power of Next.js and modern web technologies to deliver a seamless, immersive user experience.
 
-🔗 **Live Demo:** [https://radityarakha.vercel.app](https://radityarakha.vercel.app)
+🔗 **Live Demo:** [https://radityarakha.my.id](https://radityarakha.my.id)
 
 ## ✨ Features
 
