@@ -28,4 +28,5 @@ export const techLogos: Record<string, string> = {
   "c++": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
   arduino: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
   n8n: "https://cdn.simpleicons.org/n8n",
+  supabase: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
 };

@@ -7,7 +7,7 @@ export default function Skill() {
 
   // Categorize keys manually to ensure correct groupings
   const frontend = ["react", "nextjs", "tailwindcss", "figma", "typescript", "flutter", "dart"];
-  const backend = ["nodejs", "expressjs", "python", "mongodb", "postman", "laravel", "fastapi"];
+  const backend = ["nodejs", "expressjs", "python", "mongodb", "postman", "laravel", "fastapi", "supabase"];
   const devops = ["proxmox", "docker", "ubuntu", "linux", "cloudflare", "n8n", "arduino", "github"];
 
   const renderMarquee = (skills: string[], direction: "left" | "right") => (

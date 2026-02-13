@@ -45,6 +45,15 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    title: "Pos App",
+    description: "Point of Sale application for retail businesses, complete with Stock Management, and Admin Dashboard.",
+    tech: ["flutter", "dart", "supabase"],
+    imageUrl: "/posapp.png",
+    githubUrl: "https://github.com/lexiiyz/pos-app",
+    category: 'Mobile',
+  },
+  {
+    id: 6,
     title: "Literae",
     description: "FrontEnd Bookstore Website Using Google BooksAPI, built with React.js, Typescript, and TailwindCSS",
     tech: ["reactjs", "typescript", "tailwindcss", "postman"],
@@ -54,7 +63,7 @@ export const projects: Project[] = [
     category: 'Web',
   },
   {
-    id: 6,
+    id: 7,
     title: "ClassSpace",
     description: "Classroom platform for lecturers (UI/UX + Frontend).",
     tech: ["figma", "react", "tailwindcss"],
@@ -63,7 +72,7 @@ export const projects: Project[] = [
     category: 'Web',
   },
   {
-    id: 7,
+    id: 8,
     title: "My Portfolio",
     description: "Personal portfolio built with Next.js and TypeScript.",
     tech: ["nextjs", "typescript", "tailwindcss"],
@@ -72,7 +81,7 @@ export const projects: Project[] = [
     category: 'Web',
   },
   {
-    id: 8,
+    id: 9,
     title: "BookITS",
     description: "Full-stack e-commerce book platform built with MERN stack (MongoDB, Express, React, Node.js).",
     tech: ["react", "nodejs", "mongodb", "expressjs", "postman"],
@@ -81,7 +90,7 @@ export const projects: Project[] = [
     category: 'Web',
   },
   {
-    id: 9,
+    id: 10,
     title: "Cravory",
     description: "Food recipe website built with MERN stack.",
     tech: ["react", "nodejs", "mongodb", "expressjs", "tailwindcss"],
@@ -90,7 +99,7 @@ export const projects: Project[] = [
     category: 'Web',
   },
   {
-    id: 10,
+    id: 11,
     title: "IoT HVAC Control",
     description: "Smart HVAC control and monitoring system using ESP32 and MQTT, with a Laravel dashboard.",
     tech: ["arduino", "mqtt", "laravel", "c++"],
