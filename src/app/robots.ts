@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://radityarakha.vercel.app/sitemap.xml',
+    sitemap: 'https://radityarakha.my.id/sitemap.xml',
   };
 }

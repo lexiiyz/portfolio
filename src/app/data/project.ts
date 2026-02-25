@@ -41,6 +41,7 @@ export const projects: Project[] = [
     description: "Safety gear detection system for industrial environments.",
     tech: ["python", "react", "fastapi", "expressjs", "postgresql", "typescript", "tailwindcss", "figma", "nodejs", "postman"],
     imageUrl: "/sentinel.png",
+    githubUrl: "https://github.com/lexiiyz/Protel",
     category: 'AI',
   },
   {

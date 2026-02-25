@@ -4,7 +4,6 @@ import { projects } from './data/project';
 import SpotlightCard from './components/SpotLights';
 import Skill from './components/Skill';
 import TextType from './components/TextType';
-import Beams from './components/Beams';
 import Link from 'next/link';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -33,34 +32,22 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="absolute inset-0 z-0 w-full h-full pointer-events-none scanlines" />
-            
-            <div className="absolute inset-0 z-0 w-full h-full">
-              <Beams
-                beamWidth={2}
-                beamHeight={15}
-                beamNumber={12}
-                lightColor="#00f0ff"
-                speed={4}
-                noiseIntensity={1.75}
-                scale={0.2}
-                rotation={30}
-              />
-            </div>
+            <div className="absolute inset-0 z-0 w-full h-full pointer-events-none" />
+            <div className="absolute inset-0 z-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-500 to-zinc-200 animate-gradient-xy bg-[length:400%_400%] opacity-30" />
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 pb-12">
               <section
                 id="home"
                 className="h-120 min-h-[60vh] flex flex-col justify-center items-center text-center relative z-20
                            bg-[var(--card-bg)] p-8 shadow-xl
-                           border border-[var(--primary-neon)] cyberpunk-card mx-auto max-w-4xl mt-30"
+                           border border-slate-700/50 pro-card mx-auto max-w-4xl mt-30"
               >
-                <h1 className="font-heading text-4xl font-extrabold text-[var(--text-primary)] glitch-text">
-                  {"Hello, I'm"} <span className="text-[var(--primary-neon)]">Raditya Rakha</span>
+                <h1 className="font-heading text-4xl font-extrabold text-[var(--text-primary)]">
+                  {"Hello, I'm"} <span className="text-[var(--accent)]">Raditya Rakha</span>
                 </h1>
                 <TextType
                   text={["Frontend Developer", "DevOps Enthusiast", "Full Stack Developer", "UI/UX Designer"]}
-                  className="text-3xl text-[var(--secondary-neon)] mt-4"
+                  className="text-3xl text-[var(--text-secondary)] mt-4"
                   typingSpeed={75}
                   pauseDuration={1500}
                   showCursor={true}
@@ -75,25 +62,24 @@ export default function Home() {
                     href="https://drive.google.com/file/d/14AVSlItQ8BxfbN1JgLZ35znyFGtqnv83/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-8 py-4 border border-[var(--primary-neon)] text-base font-semibold
-                               text-[var(--background)] bg-[var(--primary-neon)]
-                               hover:bg-[var(--background)] hover:text-[var(--primary-neon)] hover:border-[var(--secondary-neon)]
-                               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-neon)]
-                               transform transition-all duration-300 relative overflow-hidden group clip-path-polygon glitch-button"
-                    style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)' }}
+                    className="inline-flex items-center px-8 py-4 border border-[var(--accent)] text-base font-semibold
+                               text-[var(--background)] bg-[var(--accent)]
+                               hover:bg-[var(--background)] hover:text-[var(--accent)] hover:border-[var(--text-secondary)]
+                               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]
+                               transform transition-all duration-300 relative overflow-hidden group rounded-lg"
                   >
                     <span className="relative z-10">Download My CV</span>
                   </Link>
                 </div>
               </section>
 
-              <section id="skills" className="justify-center mt-20 relative z-10 p-8 mx-auto max-w-9xl cyberpunk-card">
+              <section id="skills" className="justify-center mt-20 relative z-10 p-8 mx-auto max-w-9xl pro-card">
                 <Skill />
               </section>
 
               <section id="projects" className="mt-20 relative z-10 mx-auto max-w-5xl">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center drop-shadow-lg">
-                  My <span className="text-[var(--primary-neon)]">Project</span>
+                  My <span className="text-[var(--accent)]">Project</span>
                 </h2>
 
                 {/* Cyberpunk Tabs */}
@@ -105,12 +91,11 @@ export default function Home() {
                       className={`
                         px-6 py-2 border font-bold uppercase tracking-wider transition-all duration-300
                         ${activeCategory === category 
-                          ? 'bg-[var(--primary-neon)] text-[var(--background)] border-[var(--primary-neon)] shadow-[0_0_15px_var(--primary-neon)]' 
-                          : 'bg-transparent text-[var(--text-primary)] border-[var(--primary-neon)]/30 hover:border-[var(--primary-neon)] hover:text-[var(--primary-neon)]'
+                          ? 'bg-[var(--accent)] text-[var(--background)] border-[var(--accent)] shadow-[0_0_15px_var(--accent)]' 
+                          : 'bg-transparent text-[var(--text-primary)] border-[var(--accent)]/30 hover:border-[var(--accent)] hover:text-[var(--accent)]'
                         }
-                        relative overflow-hidden group clip-path-polygon
+                        relative overflow-hidden group rounded-md
                       `}
-                      style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)' }}
                     >
                       {category}
                     </button>
@@ -128,7 +113,7 @@ export default function Home() {
                         exit={{ opacity: 0, scale: 0.9 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <SpotlightCard project={project} spotlightColor="#bc13fe" />
+                        <SpotlightCard project={project} />
                       </motion.div>
                     ))}
                   </AnimatePresence>

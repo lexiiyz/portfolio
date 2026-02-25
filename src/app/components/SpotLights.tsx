@@ -19,7 +19,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
   project,
   children, 
   className = "",
-  spotlightColor = "rgba(188, 19, 254, 0.25)"
+  spotlightColor = "rgba(203, 203, 203, 0.82)"
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -68,7 +68,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleCardClick} 
-      className={`relative cyberpunk-card p-8 ${className}`}
+      className={`relative pro-card p-8 ${className}`}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
@@ -83,7 +83,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
             <img
               src={project.imageUrl}
               alt={project.title}
-              className="w-full h-60 object-contain bg-black/40 rounded-md border border-white/5" 
+              className="w-full h-60 object-contain bg-[var(--background)]/40 rounded-md border border-white/5" 
             /> 
           </div>
         )}
@@ -119,7 +119,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-15 py-3 bg-[var(--secondary-neon)] hover:opacity-80 text-white hover:text-black text-sm transition duration-300 glitch-button relative overflow-hidden"
+              className="px-8 py-2 bg-[var(--text-secondary)] hover:opacity-80 text-white hover:text-[var(--background)] text-sm font-semibold rounded-md transition duration-300 relative overflow-hidden"
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               GitHub
@@ -132,7 +132,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-15 py-3 bg-[var(--primary-neon)] hover:bg-[var(--secondary-neon)] text-black hover:text-white text-sm transition duration-300 glitch-button relative overflow-hidden"
+              className="px-8 py-2 bg-[var(--accent)] hover:bg-[var(--text-secondary)] text-[var(--background)] hover:text-white text-sm font-semibold rounded-md transition duration-300 relative overflow-hidden"
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
             >
               Demo

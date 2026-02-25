@@ -101,12 +101,12 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full top-0 left-0 z-50 transition-all duration-300
-                     bg-[#050505]/90 backdrop-blur-md shadow-lg border-b border-[var(--primary-neon)]">
+                     bg-[var(--background)]/90 backdrop-blur-md shadow-lg border-b border-[var(--accent)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo/Nama */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="font-extrabold text-2xl text-[var(--secondary-neon)] hover:text-[var(--primary-neon)] transition-colors tracking-widest uppercase">
+            <Link href="/" className="font-extrabold text-2xl text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors tracking-widest uppercase">
               Raditya Rakha
             </Link>
           </div>
@@ -121,10 +121,10 @@ export default function Navbar() {
                   text-lg font-medium transition-colors duration-200
                   ${
                     link.href === '/' && activeSection === 'home'
-                      ? 'text-[var(--primary-neon)] drop-shadow-[0_0_5px_rgba(0,240,255,0.8)]'
+                      ? 'text-[var(--accent)] drop-shadow-[0_0_5px_rgba(0,240,255,0.8)]'
                       : link.href !== '/' && activeSection === link.href.substring(1)
-                      ? 'text-[var(--primary-neon)] drop-shadow-[0_0_5px_rgba(0,240,255,0.8)]'
-                      : 'text-gray-400 hover:text-[var(--secondary-neon)] hover:drop-shadow-[0_0_5px_rgba(188,19,254,0.8)]' 
+                      ? 'text-[var(--accent)] drop-shadow-[0_0_5px_rgba(0,240,255,0.8)]'
+                      : 'text-gray-400 hover:text-[var(--text-secondary)] hover:drop-shadow-[0_0_5px_rgba(188,19,254,0.8)]' 
                   }
                 `}
               >
@@ -136,7 +136,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-purple-300 focus:outline-none focus:ring-2 focus:ring-white"
+              className="text-white hover:text-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-white"
               aria-label="Toggle navigation"
             >
               <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -152,7 +152,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-sm pb-4 px-4 border-t border-[var(--primary-neon)]">
+        <div className="md:hidden bg-[var(--background)]/95 backdrop-blur-sm pb-4 px-4 border-t border-[var(--accent)]">
           {links.map((link) => (
             <Link
               key={link.name}
@@ -162,10 +162,10 @@ export default function Navbar() {
                 block py-2 text-lg font-medium transition-colors duration-200
                 ${
                   link.href === '/' && activeSection === 'home'
-                    ? 'text-blue-300'
+                    ? 'text-[var(--accent)] drop-shadow-[0_0_5px_var(--accent)]'
                     : link.href !== '/' && activeSection === link.href.substring(1)
-                    ? 'text-blue-300'
-                    : 'text-gray-200 hover:text-purple-300'
+                    ? 'text-[var(--accent)] drop-shadow-[0_0_5px_var(--accent)]'
+                    : 'text-gray-200 hover:text-[var(--text-secondary)]'
                 }
               `}
             >

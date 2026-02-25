@@ -6,7 +6,7 @@ import AOSInitializer from './components/AOSInitializer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  metadataBase: new URL('https://radityarakha.vercel.app'),
+  metadataBase: new URL('https://radityarakha.my.id'),
   title: {
     default: 'Raditya Rakha | Fullstack Developer & Cloud Enthusiast',
     template: '%s | Raditya Rakha'
@@ -18,11 +18,11 @@ export const metadata = {
   openGraph: {
     title: 'Raditya Rakha | Fullstack Developer & Cloud Enthusiast',
     description: 'Explore the portfolio of Raditya Rakha, featuring projects in Web, Mobile, IoT, and DevOps.',
-    url: 'https://radityarakha.vercel.app',
+    url: 'https://radityarakha.my.id',
     siteName: 'Raditya Rakha Portfolio',
     images: [
       {
-        url: '/logo.jpeg',
+        url: '/Logo.png',
         width: 800,
         height: 600,
         alt: 'Raditya Rakha Portfolio Logo',
@@ -35,14 +35,14 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Raditya Rakha | Fullstack Developer & Cloud Enthusiast',
     description: 'Fullstack Web Developer and DevOps Enthusiast. Check out my latest projects and skills.',
-    images: ['/logo.jpeg'],
+    images: ['/Logo.png'],
   },
   icons: {
-    icon: '/logo.jpeg',
-    apple: '/logo.jpeg',
+    icon: '/Logo.png',
+    apple: '/Logo.png',
   },
   verification: {
-    google: 'dGxkpry8fopj8iFb1te69BdYMf4vLZh41mqGKGY2wjk',
+    google: 'XhLDKay_eYOKwOl5hkMsuivA1GFDe7IxZAqqdfle7fE',
   },
 };
 

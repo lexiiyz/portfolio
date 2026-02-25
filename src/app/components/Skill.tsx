@@ -24,9 +24,9 @@ export default function Skill() {
         return (
           <div
             key={key}
-            className="tech-bubble cyberpunk-card text-[var(--text-primary)] py-3 px-6 mx-4
+            className="tech-bubble pro-card text-[var(--text-primary)] py-3 px-6 mx-4
                        flex flex-col md:flex-row items-center gap-2 md:gap-3 
-                       transition-colors duration-300 hover:border-[var(--primary-neon)]"
+                       transition-colors duration-300 hover:border-[var(--accent)]"
           >
             <img 
               src={logoSrc} 
@@ -60,11 +60,11 @@ export default function Skill() {
   return (
     <div className="text-white text-center py-10 relative overflow-hidden">
       <h1
-        className="font-extrabold text-4xl md:text-5xl mb-4 text-[var(--text-primary)] glitch-text tracking-wide"
+        className="font-extrabold text-4xl md:text-5xl mb-4 text-[var(--text-primary)] tracking-wide"
         data-aos="fade-up"
         data-aos-duration="800"
       >
-        Technical <span className="text-[var(--primary-neon)]">Arsenal</span>
+        Technical <span className="text-[var(--accent)]">Arsenal</span>
       </h1>
       <h3
         className="text-lg md:text-xl mb-12 text-gray-300 max-w-2xl mx-auto leading-relaxed px-4"
@@ -72,7 +72,7 @@ export default function Skill() {
         data-aos-delay="200"
         data-aos-duration="800"
       >
-        My deployment modules. A curated stack of <span className="text-[var(--secondary-neon)]">modern web technologies</span> and <span className="text-[var(--primary-neon)]">cloud infrastructure</span> tools.
+        My deployment modules. A curated stack of <span className="text-[var(--text-secondary)]">modern web technologies</span> and <span className="text-[var(--accent)]">cloud infrastructure</span> tools.
       </h3>
 
       <div className="space-y-6" data-aos="fade-up" data-aos-delay="300">
