@@ -8,15 +8,15 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   metadataBase: new URL('https://radityarakha.my.id'),
   title: {
-    default: 'Raditya Rakha | Fullstack Developer & Cloud Enthusiast',
+    default: 'Raditya Rakha Renanda | Fullstack Developer, DevOps & Cloud Enthusiast',
     template: '%s | Raditya Rakha'
   },
   description: 'Portfolio of Raditya Rakha, a Fullstack Web Developer and DevOps Enthusiast specializing in scalable web solutions, cloud orchestration, and seamless digital experiences.',
   keywords: ['Fullstack Developer', 'DevOps', 'Web Development', 'UI/UX Design', 'Next.js', 'React', 'TypeScript', 'Cloud Computing'],
-  authors: [{ name: 'Raditya Rakha' }],
-  creator: 'Raditya Rakha',
+  authors: [{ name: 'Raditya Rakha Renanda' }],
+  creator: 'Raditya Rakha Renanda',
   openGraph: {
-    title: 'Raditya Rakha | Fullstack Developer & Cloud Enthusiast',
+    title: 'Raditya Rakha Renanda | Fullstack Developer, DevOps & Cloud Enthusiast',
     description: 'Explore the portfolio of Raditya Rakha, featuring projects in Web, Mobile, IoT, and DevOps.',
     url: 'https://radityarakha.my.id',
     siteName: 'Raditya Rakha Portfolio',
@@ -33,7 +33,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Raditya Rakha | Fullstack Developer & Cloud Enthusiast',
+    title: 'Raditya Rakha Renanda | Fullstack Developer, DevOps & Cloud Enthusiast',
     description: 'Fullstack Web Developer and DevOps Enthusiast. Check out my latest projects and skills.',
     images: ['/Logo.png'],
   },

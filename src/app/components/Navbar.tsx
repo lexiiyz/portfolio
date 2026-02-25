@@ -45,10 +45,8 @@ export default function Navbar() {
         behavior: 'smooth',
         block: 'start',
       });
-      if (history.pushState) {
-        history.pushState(null, '', href);
-      } else {
-        window.location.hash = href;
+      if (history.replaceState) {
+        history.replaceState(null, '', '/');
       }
     }
   };
