@@ -43,7 +43,7 @@ export default function Home() {
                            border border-slate-700/50 pro-card mx-auto max-w-4xl mt-30"
               >
                 <h1 className="font-heading text-4xl font-extrabold text-[var(--text-primary)]">
-                  {"Hello, I'm"} <span className="text-[var(--accent)]">Raditya Rakha</span>
+                  {"Hello, I'm"} <span className="text-[var(--accent)]">Raditya Rakha<span className="sr-only"> Renanda</span></span>
                 </h1>
                 <TextType
                   text={["Frontend Developer", "DevOps Enthusiast", "Full Stack Developer", "UI/UX Designer"]}

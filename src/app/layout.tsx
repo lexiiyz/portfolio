@@ -11,8 +11,23 @@ export const metadata = {
     default: 'Raditya Rakha Renanda | Fullstack Developer, DevOps & Cloud Enthusiast',
     template: '%s | Raditya Rakha'
   },
-  description: 'Portfolio of Raditya Rakha, a Fullstack Web Developer and DevOps Enthusiast specializing in scalable web solutions, cloud orchestration, and seamless digital experiences.',
-  keywords: ['Fullstack Developer', 'DevOps', 'Web Development', 'UI/UX Design', 'Next.js', 'React', 'TypeScript', 'Cloud Computing'],
+  description: 'Portfolio of Raditya Rakha Renanda, a Fullstack Web Developer and DevOps Enthusiast specializing in scalable web solutions, cloud orchestration, and seamless digital experiences.',
+  keywords: [
+    'Raditya Rakha Renanda', 
+    'Raditya Rakha', 
+    'Rakha Renanda', 
+    'Raditya', 
+    'Rakha', 
+    'Portfolio Raditya Rakha',
+    'Fullstack Developer', 
+    'DevOps', 
+    'Web Development', 
+    'UI/UX Design', 
+    'Next.js', 
+    'React', 
+    'TypeScript', 
+    'Cloud Computing'
+  ],
   authors: [{ name: 'Raditya Rakha Renanda' }],
   creator: 'Raditya Rakha Renanda',
   openGraph: {
@@ -53,6 +68,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Raditya Rakha Renanda",
+              "alternateName": ["Raditya Rakha", "Rakha Renanda"],
+              "url": "https://radityarakha.my.id",
+              "jobTitle": "Fullstack Developer & DevOps Enthusiast",
+            })
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <Navbar />
         {children}
