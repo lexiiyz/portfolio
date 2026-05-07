@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:cdn.jsdelivr.net)",
+      "WebFetch(domain:logo.clearbit.com)",
+      "WebFetch(domain:icon.horse)",
+      "WebFetch(domain:t1.gstatic.com)",
+      "WebFetch(domain:www.pinecone.io)",
+      "WebFetch(domain:cdn.simpleicons.org)"
+    ]
+  }
+}

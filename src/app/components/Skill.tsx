@@ -3,12 +3,12 @@ import Marquee from "react-fast-marquee";
 import { techLogos } from "../data/techLogos";
 
 export default function Skill() {
-  const invertedLogos = ["expressjs", "flask", "vercel", "github"];
+  const invertedLogos = ["expressjs", "flask", "vercel", "github", "gpt"];
 
   // Categorize keys manually to ensure correct groupings
   const frontend = ["react", "nextjs", "tailwindcss", "figma", "typescript", "flutter", "dart"];
   const backend = ["nodejs", "expressjs", "python", "mongodb", "postman", "laravel", "fastapi", "supabase"];
-  const devops = ["proxmox", "docker", "ubuntu", "linux", "cloudflare", "n8n", "arduino", "github"];
+  const devops = ["proxmox", "docker", "ubuntu", "linux", "cloudflare", "aws", "nginx", "portainer", "grafana", "nvidia", "n8n", "arduino", "github"];
 
   const renderMarquee = (skills: string[], direction: "left" | "right") => (
     <Marquee
@@ -34,7 +34,7 @@ export default function Skill() {
               className={`w-6 h-6 md:w-8 md:h-8 ${invertedLogos.includes(key) ? 'invert brightness-0' : ''}`} 
             />
             <span className="text-sm md:text-base font-bold tracking-wide"> 
-              {key.replace(/nodejs|nextjs|reactjs|expressjs|tailwindcss|github|mysql|mongodb|typescript|javascript|c\+\+/i, (match) => {
+              {key.replace(/nodejs|nextjs|reactjs|expressjs|tailwindcss|github|mysql|mongodb|typescript|javascript|c\+\+|aws|nvidia|fastapi|n8n/i, (match) => {
                 switch (match.toLowerCase()) {
                   case 'nodejs': return 'Node.js';
                   case 'nextjs': return 'Next.js';
@@ -47,6 +47,10 @@ export default function Skill() {
                   case 'typescript': return 'TypeScript';
                   case 'javascript': return 'JS';
                   case 'c++': return 'C++';
+                  case 'aws': return 'AWS';
+                  case 'nvidia': return 'NVIDIA';
+                  case 'fastapi': return 'FastAPI';
+                  case 'n8n': return 'n8n';
                   default: return match;
                 }
               }).replace(/^./, str => str.toUpperCase())}
