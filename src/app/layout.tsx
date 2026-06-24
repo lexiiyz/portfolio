@@ -1,24 +1,20 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from './components/Navbar';
-import AOSInitializer from './components/AOSInitializer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   metadataBase: new URL('https://radityarakha.my.id'),
   title: {
-    default: 'Raditya Rakha Renanda | Fullstack Developer & DevOps Engineer',
-    template: '%s | Raditya Rakha'
+    default: 'Rakha Renanda | Fullstack Developer & DevOps Engineer',
+    template: '%s | Rakha'
   },
-  description: 'Portfolio of Raditya Rakha — Fullstack Developer & DevOps Engineer building self-hosted infrastructure, cloud systems, and web apps.',
+  description: 'Portfolio of Rakha Renanda — Fullstack Developer & DevOps Engineer building self-hosted infrastructure, cloud systems, and web apps.',
   keywords: [
-    'Raditya Rakha Renanda',
-    'Raditya Rakha',
     'Rakha Renanda',
-    'Raditya',
     'Rakha',
-    'Portfolio Raditya Rakha',
+    'Portfolio Rakha',
     'Fullstack Developer',
     'DevOps Engineer',
     'Cloud Engineer',
@@ -37,23 +33,23 @@ export const metadata = {
     'TypeScript',
     'IoT',
   ],
-  authors: [{ name: 'Raditya Rakha Renanda' }],
-  creator: 'Raditya Rakha Renanda',
+  authors: [{ name: 'Rakha Renanda' }],
+  creator: 'Rakha Renanda',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Raditya Rakha Renanda | Fullstack Developer & DevOps Engineer',
-    description: 'Portfolio of Raditya Rakha — Fullstack Developer & DevOps Engineer building self-hosted infrastructure, cloud systems, and web apps.',
+    title: 'Rakha Renanda | Fullstack Developer & DevOps Engineer',
+    description: 'Portfolio of Rakha Renanda — Fullstack Developer & DevOps Engineer building self-hosted infrastructure, cloud systems, and web apps.',
     url: 'https://radityarakha.my.id',
-    siteName: 'Raditya Rakha Portfolio',
+    siteName: 'Rakha Portfolio',
     images: [
       {
         url: '/Logo.png',
         width: 1200,
         height: 630,
-        alt: 'Raditya Rakha Portfolio',
+        alt: 'Rakha Portfolio',
       },
     ],
     locale: 'en_US',
@@ -61,8 +57,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Raditya Rakha Renanda | Fullstack Developer & DevOps Engineer',
-    description: 'Portfolio of Raditya Rakha — Fullstack Developer & DevOps Engineer building self-hosted infrastructure, cloud systems, and web apps.',
+    title: 'Rakha Renanda | Fullstack Developer & DevOps Engineer',
+    description: 'Portfolio of Rakha Renanda — Fullstack Developer & DevOps Engineer building self-hosted infrastructure, cloud systems, and web apps.',
     images: ['/Logo.png'],
   },
   icons: {
@@ -88,8 +84,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Raditya Rakha Renanda",
-              "alternateName": ["Raditya Rakha", "Rakha Renanda"],
+              "name": "Rakha Renanda",
+              "alternateName": ["Rakha", "Rakha Renanda"],
               "url": "https://radityarakha.my.id",
               "jobTitle": "Fullstack Developer & DevOps Engineer",
               "description": "Fullstack Developer and DevOps Engineer specializing in self-hosted infrastructure, cloud systems, and web & mobile applications.",
@@ -111,7 +107,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         {children}
-        <AOSInitializer /> 
       </body>
     </html>
   );

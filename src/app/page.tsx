@@ -1,130 +1,87 @@
 'use client';
 
-import { projects } from './data/project';
-import SpotlightCard from './components/SpotLights';
-import Skill from './components/Skill';
-import TextType from './components/TextType';
-import Link from 'next/link';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
-import Preloader from './components/Preloader';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
-import { Project } from './data/project';
+import Preloader from './components/Preloader';
+import DotField from './components/DotField';
+import TerminalConsole from './components/TerminalConsole';
 
 export default function Home() {
   const [showHome, setShowHome] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<'All' | 'Web' | 'Mobile' | 'IoT' | 'DevOps' | 'AI'>('All');
+  const [cpuUsage, setCpuUsage] = useState(12);
+  const [ramUsage, setRamUsage] = useState(41);
+  const [ping, setPing] = useState(14);
+  const [time, setTime] = useState('');
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+  // Live Homelab system stats simulator
+  useEffect(() => {
+    if (!showHome) return;
+
+    const interval = setInterval(() => {
+      setCpuUsage(Math.floor(Math.random() * (22 - 6) + 6));
+      setRamUsage((prev) => {
+        const drift = Math.random() > 0.5 ? 1 : -1;
+        const newVal = prev + drift;
+        return newVal > 46 ? 44 : newVal < 38 ? 40 : newVal;
+      });
+      setPing(Math.floor(Math.random() * (22 - 12) + 12));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [showHome]);
+
+  // Live dynamic local clock
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setTime(now.toLocaleTimeString('en-US', { hour12: false }));
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative w-full h-screen min-h-screen overflow-hidden bg-[#040408]">
       {!showHome && <Preloader onFinish={() => setShowHome(true)} />} 
+
+      {/* Background 3D DotField effect optimized for performance */}
+      <DotField speed={0.8} />
 
       <AnimatePresence>
         {showHome && (
           <motion.div
             key="home"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2 }}
+            className="w-full h-full flex flex-col justify-between items-center relative z-10 px-4 md:px-8 py-20"
           >
-            <div className="absolute inset-0 z-0 w-full h-full pointer-events-none" />
-            <div className="absolute inset-0 z-0 w-full h-full bg-gradient-to-br from-zinc-900 via-zinc-500 to-zinc-200 animate-gradient-xy bg-[length:400%_400%] opacity-30" />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 pb-12">
-              <section
-                id="home"
-                className="h-120 min-h-[60vh] flex flex-col justify-center items-center text-center relative z-20
-                           bg-[var(--card-bg)] p-8 shadow-xl
-                           border border-slate-700/50 pro-card mx-auto max-w-4xl mt-30"
-              >
-                <h1 className="font-heading text-4xl font-extrabold text-[var(--text-primary)]">
-                  {"Hello, I'm"} <span className="text-[var(--accent)]">Raditya Rakha<span className="sr-only"> Renanda</span></span>
-                </h1>
-                <TextType
-                  text={["Frontend Developer", "DevOps Enthusiast", "Full Stack Developer", "UI/UX Designer"]}
-                  className="text-3xl text-[var(--text-secondary)] mt-4"
-                  typingSpeed={75}
-                  pauseDuration={1500}
-                  showCursor={true}
-                  cursorCharacter="|"
-                />
-                <p className="font-body text-md md:text-1xl text-gray-300 mt-6 leading-relaxed max-w-2xl drop-shadow-md">
-                  Architecting scalable web solutions and managing complex infrastructure. Passionate about self-hosting, cloud orchestration, and building seamless digital experiences.
-                </p>
-
-                <div className="mt-10">
-                  <Link
-                    href="https://drive.google.com/file/d/14AVSlItQ8BxfbN1JgLZ35znyFGtqnv83/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-8 py-4 border border-[var(--accent)] text-base font-semibold
-                               text-[var(--background)] bg-[var(--accent)]
-                               hover:bg-[var(--background)] hover:text-[var(--accent)] hover:border-[var(--text-secondary)]
-                               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]
-                               transform transition-all duration-300 relative overflow-hidden group rounded-lg"
-                  >
-                    <span className="relative z-10">Download My CV</span>
-                  </Link>
-                </div>
-              </section>
-
-              <section id="skills" className="justify-center mt-20 relative z-10 p-8 mx-auto max-w-9xl pro-card">
-                <Skill />
-              </section>
-
-              <section id="projects" className="mt-20 relative z-10 mx-auto max-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center drop-shadow-lg">
-                  My <span className="text-[var(--accent)]">Project</span>
-                </h2>
-
-                {/* Cyberpunk Tabs */}
-                <div className="flex flex-wrap justify-center gap-4 mb-10">
-                  {(['All', 'Web', 'Mobile', 'IoT', 'DevOps', 'AI'] as const).map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setActiveCategory(category)}
-                      className={`
-                        px-6 py-2 border font-bold uppercase tracking-wider transition-all duration-300
-                        ${activeCategory === category 
-                          ? 'bg-[var(--accent)] text-[var(--background)] border-[var(--accent)] shadow-[0_0_15px_var(--accent)]' 
-                          : 'bg-transparent text-[var(--text-primary)] border-[var(--accent)]/30 hover:border-[var(--accent)] hover:text-[var(--accent)]'
-                        }
-                        relative overflow-hidden group rounded-md
-                      `}
-                    >
-                      {category}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                  <AnimatePresence mode='popLayout'>
-                    {filteredProjects.map((project) => (
-                      <motion.div
-                        key={project.id}
-                        layout
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <SpotlightCard project={project} />
-                      </motion.div>
-                    ))}
-                  </AnimatePresence>
-                </div>
-              </section>
-
-              <section id="contact">
-                <ContactSection />
-              </section>
+            {/* High-Tech System Status Bar */}
+            <div className="w-full max-w-4xl bg-black/40 border border-white/[0.06] rounded-xl px-4 py-2.5 backdrop-blur-xl flex flex-wrap justify-between items-center text-[10px] md:text-xs font-mono text-gray-400 gap-2 mb-4">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                <span className="font-bold text-white uppercase tracking-wider">SYSTEM STATUS: ACTIVE</span>
+              </div>
+              <div className="flex items-center gap-4 flex-wrap">
+                <div>HOST: <span className="text-[var(--accent)] font-bold">rakha-homelab</span></div>
+                <div className="hidden sm:inline">PING: <span className="text-gray-200">{ping}ms</span></div>
+                <div>CPU: <span className="text-gray-200 font-bold">{cpuUsage}%</span></div>
+                <div>RAM: <span className="text-gray-200 font-bold">{ramUsage}%</span></div>
+                <div className="text-[var(--accent-rose)] font-bold">{time}</div>
+              </div>
             </div>
-            <Footer />
+
+            {/* Center Console Terminal */}
+            <div className="w-full flex-grow flex items-center justify-center">
+              <TerminalConsole />
+            </div>
+
+            {/* Bottom Footer */}
+            <div className="text-center font-mono text-[9px] md:text-xs text-gray-600 mt-4 select-none tracking-widest uppercase">
+              <span>RAKHA &copy; {new Date().getFullYear()} // DEVOPS & AI LAB // ALL RIGHTS RESERVED</span>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
