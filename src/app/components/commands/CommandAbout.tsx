@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommandAbout: React.FC = () => (
   <div className="space-y-3 text-gray-300 font-mono text-xs md:text-sm leading-relaxed max-w-3xl">
-    <p className="text-[var(--accent)] font-bold">// USER PROFILE DATA:</p>
+    <p className="text-[var(--accent)] font-bold">{"// USER PROFILE DATA:"}</p>
     <p>
       <span className="text-[var(--accent-purple)]">Name:</span> Rakha Renanda
     </p>

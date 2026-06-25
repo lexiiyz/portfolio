@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommandExperience: React.FC = () => (
   <div className="space-y-6 text-gray-300 font-mono text-xs md:text-sm">
-    <p className="text-[var(--accent)] font-bold">// WORK & ORGANIZATIONAL TIMELINE:</p>
+    <p className="text-[var(--accent)] font-bold">{"// WORK & ORGANIZATIONAL TIMELINE:"}</p>
     <div className="space-y-4 pl-2 border-l border-white/10">
       {/* Job 1 */}
       <div>

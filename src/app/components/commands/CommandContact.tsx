@@ -44,7 +44,7 @@ const InlineContactForm: React.FC = () => {
       className="mt-4 p-4 border border-white/[0.08] bg-black/40 rounded-lg max-w-md"
       onClick={(e) => e.stopPropagation()}
     >
-      <p className="text-white font-bold mb-3 flex items-center gap-1.5"><span className="text-[var(--accent-rose)]">//</span> Send Message Directly:</p>
+      <p className="text-white font-bold mb-3 flex items-center gap-1.5"><span className="text-[var(--accent-rose)]">{"//"}</span> Send Message Directly:</p>
       <form action="https://formspree.io/f/xjkogzrd" onSubmit={handleSubmit} className="space-y-3">
         <input 
           type="text" 
@@ -90,7 +90,7 @@ const InlineContactForm: React.FC = () => {
 
 const CommandContact: React.FC = () => (
   <div className="space-y-4 text-gray-300 font-mono text-xs md:text-sm">
-    <p className="text-[var(--accent)] font-bold">// CHANNELS OF COMMUNICATION:</p>
+    <p className="text-[var(--accent)] font-bold">{"// CHANNELS OF COMMUNICATION:"}</p>
     <div className="space-y-2">
       <p>📱 <span className="text-gray-400">LinkedIn:</span> <Link href="https://www.linkedin.com/in/raditya-rakha" target="_blank" className="underline text-[var(--accent)] hover:text-white">linkedin.com/in/raditya-rakha</Link></p>
       <p>📸 <span className="text-gray-400">Instagram:</span> <Link href="https://www.instagram.com/rakharenanda/" target="_blank" className="underline text-[var(--accent-purple)] hover:text-white">@rakharenanda</Link></p>
