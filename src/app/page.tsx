@@ -80,7 +80,7 @@ export default function Home() {
 
             {/* Bottom Footer */}
             <div className="text-center font-mono text-[9px] md:text-xs text-gray-600 mt-4 select-none tracking-widest uppercase">
-              <span>RAKHA &copy; {new Date().getFullYear()} // DEVOPS & AI LAB // ALL RIGHTS RESERVED</span>
+              <span>RAKHA &copy; {new Date().getFullYear()} {`// DEVOPS & AI LAB // ALL RIGHTS RESERVED`}</span>
             </div>
           </motion.div>
         )}

@@ -4,12 +4,13 @@ import { projects } from '../../data/project';
 
 const CommandProjects: React.FC = () => (
   <div className="space-y-4 text-gray-300 font-mono text-xs md:text-sm">
-    <p className="text-[var(--accent)] font-bold">// DEPLOYED PROJECTS ({projects.length}):</p>
+    <p className="text-[var(--accent)] font-bold">{`// DEPLOYED PROJECTS (${projects.length}):`}</p>
     <div className="space-y-4">
       {projects.slice(0, 5).map((p) => (
         <div key={p.id} className="p-3 bg-white/[0.02] border border-white/[0.05] rounded-lg flex flex-col sm:flex-row gap-4 items-start sm:items-center">
           {p.imageUrl && (
             <div className="w-full sm:w-28 h-16 overflow-hidden rounded bg-slate-950/80 border border-white/5 flex-shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={p.imageUrl} alt={p.title} className="w-full h-full object-cover" />
             </div>
           )}

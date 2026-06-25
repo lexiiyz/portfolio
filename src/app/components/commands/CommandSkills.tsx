@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommandSkills: React.FC = () => (
   <div className="space-y-4 text-gray-300 font-mono text-xs md:text-sm">
-    <p className="text-[var(--accent)] font-bold">// TECHNICAL ARSENAL:</p>
+    <p className="text-[var(--accent)] font-bold">{`// TECHNICAL ARSENAL:`}</p>
     <div className="space-y-3">
       <div>
         <span className="text-[var(--accent)] font-bold">[FRONTEND]:</span>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommandHelp: React.FC = () => (
   <div className="space-y-2 text-gray-300 font-mono text-xs md:text-sm">
-    <p className="text-[var(--accent)] font-bold">// AVAILABLE COMMANDS:</p>
+    <p className="text-[var(--accent)] font-bold">{`// AVAILABLE COMMANDS:`}</p>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-2 pl-4">
       <div><span className="text-[var(--accent-purple)] font-bold">about</span> - Biography & profile info</div>
       <div><span className="text-[var(--accent-purple)] font-bold">skills</span> - Tech stack & arsenal</div>
