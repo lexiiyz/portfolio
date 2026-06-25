@@ -132,17 +132,9 @@ export default function TerminalConsole() {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handleRunCommand(inputValue);
-      
-      // Force zoom out on mobile by temporarily setting maximum-scale=1
+      // On mobile, blur the input to hide the keyboard
       if (typeof window !== 'undefined' && window.innerWidth < 768) {
-        const viewport = document.querySelector('meta[name=viewport]');
-        if (viewport) {
-          const originalContent = viewport.getAttribute('content');
-          viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1');
-          setTimeout(() => {
-            if (originalContent) viewport.setAttribute('content', originalContent);
-          }, 300);
-        }
+        inputRef.current?.blur();
       }
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
@@ -249,8 +241,7 @@ export default function TerminalConsole() {
                 terminalEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
               }, 300);
             }}
-            className="bg-transparent border-none outline-none text-white font-mono focus:ring-0 focus:ring-offset-0 p-0 text-xs md:text-sm max-w-full"
-            style={{ width: `${Math.max(1, inputValue.length + 1)}ch` }}
+            className="flex-grow bg-transparent border-none outline-none text-white font-mono focus:ring-0 focus:ring-offset-0 p-0 text-[16px] md:text-sm"
             autoFocus
             autoComplete="off"
             spellCheck="false"
