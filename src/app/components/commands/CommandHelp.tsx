@@ -9,9 +9,11 @@ const CommandHelp: React.FC = () => (
       <div><span className="text-[var(--accent-purple)] font-bold">experience</span> - Career timeline & organizations</div>
       <div><span className="text-[var(--accent-purple)] font-bold">projects</span> - Selected portfolio projects</div>
       <div><span className="text-[var(--accent-purple)] font-bold">contact</span> - Contact channels & instant form</div>
+      <div><span className="text-[var(--accent-purple)] font-bold">ping</span> - Ping the homelab server</div>
       <div><span className="text-[var(--accent-purple)] font-bold">help</span> - Display this help menu</div>
       <div><span className="text-[var(--accent-purple)] font-bold">clear</span> - Clear the terminal screen</div>
     </div>
+    <p className="text-gray-500 mt-2 pl-4 text-[10px] italic">Other available commands: whoami, date, pwd, ls, sudo</p>
     <p className="text-gray-500 mt-2 italic">* You can also click the quick access buttons below the terminal.</p>
   </div>
 );

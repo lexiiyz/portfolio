@@ -19,6 +19,7 @@ import CommandSkills from './commands/CommandSkills';
 import CommandExperience from './commands/CommandExperience';
 import CommandProjects from './commands/CommandProjects';
 import CommandContact from './commands/CommandContact';
+import CommandPing from './commands/CommandPing';
 
 // ==========================================
 // MAIN TERMINAL COMPONENT
@@ -78,6 +79,35 @@ export default function TerminalConsole() {
         break;
       case 'contact':
         responseContent = <CommandContact />;
+        break;
+      case 'ping':
+        responseContent = <CommandPing target={commandParts.slice(1).join(' ')} />;
+        break;
+      case 'whoami':
+        responseContent = <div className="text-gray-300">visitor</div>;
+        break;
+      case 'date':
+        responseContent = <div className="text-gray-300">{new Date().toString()}</div>;
+        break;
+      case 'pwd':
+        responseContent = <div className="text-gray-300">/home/visitor</div>;
+        break;
+      case 'ls':
+        responseContent = (
+          <div className="text-gray-300 flex gap-4">
+            <span className="text-blue-400 font-bold">projects</span>
+            <span className="text-blue-400 font-bold">skills</span>
+            <span>about.txt</span>
+            <span>contact.sh</span>
+          </div>
+        );
+        break;
+      case 'sudo':
+        responseContent = (
+          <div className="text-red-400">
+            visitor is not in the sudoers file. This incident will be reported.
+          </div>
+        );
         break;
       case 'clear':
         setHistory([]);
